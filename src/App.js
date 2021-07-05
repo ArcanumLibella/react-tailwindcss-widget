@@ -1,4 +1,5 @@
 import Accordion from "./components/Accordion";
+import Header from "./layouts/Header";
 
 const items = [
   {
@@ -17,8 +18,11 @@ const items = [
 
 function App() {
   return (
-    <div className="App container mx-auto px-4">
-      <Accordion items={items}/>
+    <div className="App container mx-auto font-sans">
+      <Header/>
+      <main className="p-4">
+        <Accordion items={items}/>
+      </main>
     </div>
   );
 }
