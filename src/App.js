@@ -18,9 +18,9 @@ const items = [
 
 function App() {
   return (
-    <div className="App container mx-auto font-sans">
+    <div className="App font-sans">
       <Header/>
-      <main className="p-4">
+      <main className="container mx-auto max-w-xl p-4">
         <Accordion items={items}/>
       </main>
     </div>
