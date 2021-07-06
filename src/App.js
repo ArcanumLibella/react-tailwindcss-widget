@@ -1,4 +1,5 @@
 import Accordion from "./components/Accordion";
+import Search from "./components/Search";
 import Header from "./layouts/Header";
 
 const items = [
@@ -21,7 +22,8 @@ function App() {
     <div className="App font-sans">
       <Header/>
       <main className="container mx-auto max-w-xl p-4">
-        <Accordion items={items}/>
+        {/* <Accordion items={items}/> */}
+        <Search />
       </main>
     </div>
   );
