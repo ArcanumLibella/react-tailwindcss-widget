@@ -11,9 +11,10 @@ export default function Search() {
                 <div className="mb-2 text-md font-medium">
                     {result.title}
                 </div>
-                <div className="text-sm">
-                    {result.snippet}
-                </div>
+                <span 
+                    dangerouslySetInnerHTML={{ __html: result.snippet}} 
+                    className="text-sm">
+                </span>
             </div>
         )
     })
