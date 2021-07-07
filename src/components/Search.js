@@ -7,14 +7,24 @@ export default function Search() {
 
     const renderedResults = results.map(result => {
         return (
-            <div key={result.pageid} className="my-2 p-4 rounded-sm bg-blue-50">
-                <div className="mb-2 text-md font-medium">
-                    {result.title}
+            <div key={result.pageid} className="md:flex justify-between my-2 p-4 rounded-md bg-blue-50">
+                <div>
+                    <div className="mb-2 text-md font-medium">
+                        {result.title}
+                    </div>
+                    <span 
+                        dangerouslySetInnerHTML={{ __html: result.snippet}} // Only with trusted sources
+                        className="text-sm">
+                    </span>
                 </div>
-                <span 
-                    dangerouslySetInnerHTML={{ __html: result.snippet}} 
-                    className="text-sm">
-                </span>
+                <a 
+                    href={`https://en.wikipedia.org?curid=${result.pageid}`} 
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block md:flex md:self-center mt-4 md:mt-0 md:ml-8 px-4 py-2 font-bold uppercase text-center text-white transition bg-blue-400 hover:bg-blue-500 rounded-md"
+                >
+                    Go
+                </a>
             </div>
         )
     })
