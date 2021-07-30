@@ -1,30 +1,17 @@
-import Accordion from "./components/Accordion";
-import Search from "./components/Search";
+import { BrowserRouter, Route } from "react-router-dom";
+import { AccordionPage, SearchPage } from "./pages";
 import Header from "./layouts/Header";
-
-const items = [
-  {
-    title: 'Titre 1',
-    description: 'Description 1'
-  },
-  {
-    title: 'Titre 2',
-    description: 'Description 2'
-  },
-  {
-    title: 'Titre 3',
-    description: 'Description 3'
-  }
-]
 
 function App() {
   return (
     <div className="App font-sans">
+      <BrowserRouter>
       <Header/>
-      <main className="container mx-auto max-w-xl p-4">
-        {/* <Accordion items={items}/> */}
-        <Search />
-      </main>
+        <main className="container mx-auto max-w-xl p-4">
+          <Route path="/" exact component={AccordionPage} />
+          <Route path="/search" component={SearchPage} />
+        </main>
+      </BrowserRouter>
     </div>
   );
 }
