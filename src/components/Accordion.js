@@ -30,7 +30,6 @@ export default function Accordion({items}) {
     })
     return (
         <Fragment>
-            <h2 className="mb-4 text-xl font-bold uppercase">Accordion</h2>
             <div className="rounded-lg overflow-hidden">{renderedItems}</div>
         </Fragment>
     )

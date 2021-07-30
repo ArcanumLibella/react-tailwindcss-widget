@@ -58,7 +58,6 @@ export default function Search() {
 
 	return (
 		<div>
-			<h2 className="mb-4 text-xl font-bold uppercase">Wikipedia Search</h2>
 			<form className="mb-8">
 				<fieldset className="flex flex-col">
 						<label className="mb-2 text-sm font-bold">Enter search term</label>
