@@ -1,4 +1,4 @@
-const Colors = [
+const Options = [
     {
       label: 'Bleu turquoise',
       value: 'bleu-turquoise',
@@ -17,5 +17,5 @@ const Colors = [
     }
   ]
   
-  export default Colors
+  export default Options
   
