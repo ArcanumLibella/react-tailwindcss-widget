@@ -21,9 +21,14 @@ module.exports = {
       },
       rose: {
         bonbon: '#F58EA6',
-        DEFAULT: '#E75A7C',
+        DEFAULT: '#F4CCCC',
         corail: '#FF475A',
-        light: '#FCDAE1'
+        light: '#FFF7FC'
+      },
+      grey: {
+        light: '#F9F9F9',
+        DEFAULT: '#F3F3F3',
+        dark: '#444444'
       }
     },
     extend: {},
