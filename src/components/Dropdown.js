@@ -21,14 +21,15 @@ export default function Dropdown({selected, onSelectedChange, options}) {
     return (
         <form>
             <fieldset className="">
-                <label className="flex justify-between items-center mb-1 p-4 rounded-md border border-grey font-bold">
-                    Select a option
-                    <ChevronDownIcon className="h-6 w-6 mr-2" />
+                <label className="flex justify-between items-center p-4 pb-2 font-bold">
+                    Select an option :
                 </label>
-                <ul className="dropdown-menu mt-4 rounded-md border border-grey">
+                <ul className="dropdown-menu rounded-md border border-grey">
                     <li className={`flex justify-between items-center p-4 font-medium cursor-pointer text-${selected.value} border border-grey`}>
                         {selected.label}
-                        <div className={`h-6 w-6 rou rounded-md bg-${selected.value}`}></div>
+                        <div className="flex justify-between items-center">
+                            <ChevronDownIcon className="h-6 w-6" />
+                        </div>
                     </li>
                     {renderedOptions}
                 </ul>
