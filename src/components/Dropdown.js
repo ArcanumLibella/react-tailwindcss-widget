@@ -23,11 +23,6 @@ export default function Dropdown({selected, onSelectedChange, options}) {
         )
     })
 
-    const handleDropdown = () => {
-        setOpen(!open)
-        console.log(open)
-    }
-
     return (
         <form>
             <fieldset className="">
@@ -35,7 +30,7 @@ export default function Dropdown({selected, onSelectedChange, options}) {
                     Select an option :
                 </label>
                 <ul 
-                    onClick={() => handleDropdown()}
+                    onClick={() => setOpen(!open)}
                     className="dropdown-menu rounded-md border border-grey"
                 >
                     <li className={`flex justify-between items-center p-4 font-medium cursor-pointer text-${selected.value} border border-grey`}>
