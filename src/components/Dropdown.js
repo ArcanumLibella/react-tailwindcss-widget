@@ -4,6 +4,9 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 export default function Dropdown({selected, onSelectedChange, options}) {
 
     const renderedOptions = options.map(option => {
+        if (option.value === selected.value) {
+            return null;
+        }
         return (
             <li 
                 key={option.value}
@@ -23,7 +26,7 @@ export default function Dropdown({selected, onSelectedChange, options}) {
                     <ChevronDownIcon className="h-6 w-6 mr-2" />
                 </label>
                 <ul className="dropdown-menu mt-4 rounded-md border border-grey">
-                    <li className="flex justify-between items-center text-grey-dark p-4 font-medium cursor-pointer">
+                    <li className={`flex justify-between items-center p-4 font-medium cursor-pointer text-${selected.value}`}>
                         {selected.label}
                         <div className={`h-6 w-6 rou rounded-md bg-${selected.value}`}></div>
                     </li>
