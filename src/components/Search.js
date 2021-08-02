@@ -8,7 +8,7 @@ export default function Search() {
 
 	const renderedResults = results.map(result => {
 		return (
-			<div key={result.pageid} className="md:flex justify-between my-2 p-4 rounded-md bg-blue-50">
+			<div key={result.pageid} className="md:flex justify-between my-2 p-4 rounded-md bg-vert-light">
 				<div>
 					<div className="mb-2 text-md font-medium">
 						{result.title}
@@ -22,7 +22,7 @@ export default function Search() {
 					href={`https://en.wikipedia.org?curid=${result.pageid}`} 
 					target="_blank"
 					rel="noreferrer"
-					className="block md:flex md:self-center mt-4 md:mt-0 md:ml-8 px-4 py-2 font-bold uppercase text-center text-white transition bg-blue-400 hover:bg-blue-500 rounded-md"
+					className="block md:flex md:self-center mt-4 md:mt-0 md:ml-8 px-4 py-2 font-bold uppercase text-center text-white transition bg-vert-malachite hover:bg-blue-500 rounded-md"
 				>
 					Go
 				</a>
