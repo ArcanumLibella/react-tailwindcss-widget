@@ -26,7 +26,7 @@ export default function Dropdown({selected, onSelectedChange, options}) {
                     <ChevronDownIcon className="h-6 w-6 mr-2" />
                 </label>
                 <ul className="dropdown-menu mt-4 rounded-md border border-grey">
-                    <li className={`flex justify-between items-center p-4 font-medium cursor-pointer text-${selected.value}`}>
+                    <li className={`flex justify-between items-center p-4 font-medium cursor-pointer text-${selected.value} border border-grey`}>
                         {selected.label}
                         <div className={`h-6 w-6 rou rounded-md bg-${selected.value}`}></div>
                     </li>
