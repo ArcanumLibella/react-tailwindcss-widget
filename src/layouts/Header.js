@@ -15,6 +15,9 @@ export default function Header() {
                 <Link to="/search" className="mx-8">
                     Wikipedia
                 </Link>
+                <Link to="/dropdown" className="mx-8">
+                    Dropdown Color
+                </Link>
             </nav>
         </header>
     )
