@@ -15,12 +15,12 @@ module.exports = {
         light: '#E7EBC2'
       },
       jaune: {
-        soleil: '#DF9216',
-        DEFAULT: '#EDAD45',
-        light: '#FDFBEC'
+        soleil: '#FDBA35',
+        DEFAULT: '#FFD166',
+        light: '#FFE7AD'
       },
       rose: {
-        bonbon: '',
+        bonbon: '#F58EA6',
         DEFAULT: '#E75A7C',
         corail: '#FF475A',
         light: '#FCDAE1'

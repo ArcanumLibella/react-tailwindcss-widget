@@ -16,7 +16,7 @@ export default function Accordion({items}) {
         const rotate = index === activeIndex ? 'rotate-180' : 'rotate-0'
 
         return (
-            <div key={index} className="p-4 bg-rose-light cursor-pointer">
+            <div key={index} className="p-4 bg-jaune cursor-pointer">
                 <div 
                     onClick={() => onTitleClick(index)}
                     className={`flex justify-between items-center `}
