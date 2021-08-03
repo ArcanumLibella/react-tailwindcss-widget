@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
-export default function Dropdown({selected, onSelectedChange, options}) {
+export default function Dropdown({label, selected, onSelectedChange, options}) {
     const [open, setOpen] = useState(false);
     const ref = useRef()
 
@@ -41,10 +41,10 @@ export default function Dropdown({selected, onSelectedChange, options}) {
     })
 
     return (
-        <form ref={ref}>
+        <div ref={ref}>
             <fieldset>
-                <label className="flex justify-between items-center p-4 pb-2 font-bold">
-                    Select an option :
+                <label className="flex justify-between items-center pb-2 font-medium">
+                    {label} :
                 </label>
                 <ul 
                     onClick={() => setOpen(!open)}
@@ -59,6 +59,6 @@ export default function Dropdown({selected, onSelectedChange, options}) {
                     {renderedOptions}
                 </ul>
             </fieldset>
-        </form>
+        </div>
     )
 }

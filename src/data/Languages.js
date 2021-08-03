@@ -4,12 +4,20 @@ const Options = [
       value: 'en',
     },
     {
-      label: 'Russian',
-      value: 'ru',
+      label: 'Spanish',
+      value: 'es',
     },
     {
-      label: 'Hindi',
-      value: 'hi',
+      label: 'Japanese',
+      value: 'ja',
+    },
+    {
+      label: 'Hawaian',
+      value: 'haw',
+    },
+    {
+      label: 'Indonesian',
+      value: 'id',
     },
     {
       label: 'Italian',
