@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react'
+import Call from '../services/Call';
 
 export default function Convert({selected, /* language, */ text}) {
-    
-    useEffect(() => {
-        console.log(`language = `, selected)
+    const [textTranslated, setTextTranslated] = useState("")
 
+    useEffect(() => {
+        async function postData() {
+            const response = await Call.postText(text, selected)
+            setTextTranslated(response.data.translations[0].translatedText)
+         }
+        postData()
     }, [selected, /* language, */ text])
 
     return (
@@ -13,7 +18,7 @@ export default function Convert({selected, /* language, */ text}) {
                 Translation :
             </label>
             <div className="p-4 border border-grey rounded-md">
-                {text}
+                {textTranslated}
             </div>
         </div>
     )
