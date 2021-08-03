@@ -18,6 +18,9 @@ export default function Header() {
                 <Link to="/dropdown" className="mx-8 my-1 md:my-0 hover:text-white transition-all">
                     Dropdown Color
                 </Link>
+                <Link to="/translator" className="mx-8 my-1 md:my-0 hover:text-white transition-all">
+                    Translator
+                </Link>
             </nav>
         </header>
     )

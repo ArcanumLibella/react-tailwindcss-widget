@@ -1,5 +1,5 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import { HomePage, AccordionPage, SearchPage, DropdownPage } from "./pages";
+import { HomePage, AccordionPage, SearchPage, DropdownPage, TranslatePage } from "./pages";
 import Header from "./layouts/Header";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
           <Route path="/accordion" component={AccordionPage} />
           <Route path="/search" component={SearchPage} />
           <Route path="/dropdown" component={DropdownPage} />
+          <Route path="/translator" component={TranslatePage} />
         </main>
         
       </BrowserRouter>
