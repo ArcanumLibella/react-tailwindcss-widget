@@ -3,14 +3,25 @@ import Call from '../services/Call';
 
 export default function Convert({selected, /* language, */ text}) {
     const [translation, setTranslation] = useState("")
+    const [debouncedText, setDebouncedText] = useState(text)
+
+    useEffect(() => {
+        const timerId = setTimeout(() => {
+            setDebouncedText(text)
+        }, 1000)
+
+        return () => {
+            clearTimeout(timerId)
+        }
+    })
 
     useEffect(() => {
         const doTranslation = async () => {
-            const response = await Call.postText(text, selected)
+            const response = await Call.postText(debouncedText, selected)
             setTranslation(response.data.translations[0].translatedText)
          }
         doTranslation()
-    }, [selected, /* language, */ text])
+    }, [selected, /* language, */ debouncedText])
 
     return (
         <div className="mt-8">
