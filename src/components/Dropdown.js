@@ -1,8 +1,25 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
 export default function Dropdown({selected, onSelectedChange, options}) {
     const [open, setOpen] = useState(false);
+    const ref = useRef()
+
+    useEffect(() => {
+        const onBodyClick = (event) => {
+          if (ref.current.contains(event.target)) {
+            return;
+          }
+          setOpen(false);
+        };
+        document.body.addEventListener("click", onBodyClick, { capture: true });
+     
+        return () => {
+          document.body.removeEventListener("click", onBodyClick, {
+            capture: true,
+          });
+        };
+      }, []);
 
     const renderedOptions = options.map(option => {
         if (option.value === selected.value) {
@@ -14,7 +31,7 @@ export default function Dropdown({selected, onSelectedChange, options}) {
                 onClick={() => onSelectedChange(option)}
                 className={`flex justify-between items-center text-grey-dark p-4 font-medium hover:bg-grey-light cursor-pointer
                 hover:text-${option.value} 
-                ${open ? 'hidden' : 'block'}
+                ${open ? 'hidden' : ''}
                 `}
             >
                 {option.label}
@@ -24,8 +41,8 @@ export default function Dropdown({selected, onSelectedChange, options}) {
     })
 
     return (
-        <form>
-            <fieldset className="">
+        <form ref={ref}>
+            <fieldset>
                 <label className="flex justify-between items-center p-4 pb-2 font-bold">
                     Select an option :
                 </label>
