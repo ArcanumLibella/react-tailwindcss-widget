@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react'
 import Call from '../services/Call';
 
 export default function Convert({selected, /* language, */ text}) {
-    const [textTranslated, setTextTranslated] = useState("")
+    const [translation, setTranslation] = useState("")
 
     useEffect(() => {
-        async function postData() {
+        const doTranslation = async () => {
             const response = await Call.postText(text, selected)
-            setTextTranslated(response.data.translations[0].translatedText)
+            setTranslation(response.data.translations[0].translatedText)
          }
-        postData()
+        doTranslation()
     }, [selected, /* language, */ text])
 
     return (
@@ -18,7 +18,7 @@ export default function Convert({selected, /* language, */ text}) {
                 Translation :
             </label>
             <div className="p-4 border border-grey rounded-md">
-                {textTranslated}
+                {translation}
             </div>
         </div>
     )
