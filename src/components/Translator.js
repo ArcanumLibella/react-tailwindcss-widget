@@ -1,9 +1,14 @@
 import React from 'react'
+import {Dropdown} from '../components'
 
-export default function Translator() {
+export default function Translator({selected, onSelectedChange, options}) {
     return (
         <div>
-            Translator
+            <Dropdown
+                selected={selected}
+                onSelectedChange={onSelectedChange}
+                options={options}
+            />
         </div>
     )
 }

@@ -31,7 +31,7 @@ export default function Dropdown({selected, onSelectedChange, options}) {
                 onClick={() => onSelectedChange(option)}
                 className={`flex justify-between items-center text-grey-dark p-4 font-medium hover:bg-grey-light cursor-pointer
                 hover:text-${option.value} 
-                ${open ? 'hidden' : ''}
+                ${open ? '' : 'hidden'}
                 `}
             >
                 {option.label}

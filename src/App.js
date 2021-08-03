@@ -4,7 +4,7 @@ import Header from "./layouts/Header";
 
 function App() {
   return (
-    <div className="App font-sans">
+    <div className="App font-sans min-h-screen">
       <BrowserRouter>
         <Header/>
 
