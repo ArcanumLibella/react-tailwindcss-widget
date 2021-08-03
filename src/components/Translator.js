@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Dropdown} from '../components'
+import { Dropdown, Convert } from '../components'
 
 export default function Translator({selected, onSelectedChange, options}) {
     const [text, setText] = useState("")
@@ -18,12 +18,17 @@ export default function Translator({selected, onSelectedChange, options}) {
                     className="block w-full p-4 mb-4 border border-grey rounded-md font-medium placeholder-grey focus:border-rose-corail"
                 />
             </fieldset>
-            
+
             <Dropdown
                 label="Select a language"
                 selected={selected}
                 onSelectedChange={onSelectedChange}
                 options={options}
+            />
+
+            <Convert 
+                text={text}
+                selected={selected}
             />
         </div>
     )
